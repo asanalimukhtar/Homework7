@@ -1,6 +1,6 @@
 import java.util.List;
 
-//An iterator that iterates through all episodes from all seasons in a row.
+//An iterator that iterates through all episodes from all seasons in a row
 public class BingeIterator implements EpisodeIterator {
     private final List<Season> seasons;
     private int seasonIndex = 0;

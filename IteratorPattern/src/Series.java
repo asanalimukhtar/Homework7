@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
+//Series: stores seasons and returns a "binge" iterator
 public class Series {
     private final List<Season> seasons = new ArrayList<>();
 
@@ -8,8 +8,7 @@ public class Series {
         seasons.add(season);
     }
 
-    // Binge iterator through all seasons
-    public EpisodeIterator bingeIterator() {
+    public EpisodeIterator createBingeIterator() {
         return new BingeIterator(seasons);
     }
 }

@@ -1,8 +1,10 @@
 import java.util.List;
 
+//Regular sequence of episodes
+
 public class SeasonIterator implements EpisodeIterator {
     private final List<Episode> episodes;
-    private int currentIndex = 0;
+    private int index = 0;
 
     public SeasonIterator(List<Episode> episodes) {
         this.episodes = episodes;
@@ -10,11 +12,11 @@ public class SeasonIterator implements EpisodeIterator {
 
     @Override
     public boolean hasNext() {
-        return currentIndex < episodes.size();
+        return index < episodes.size();
     }
 
     @Override
     public Episode next() {
-        return episodes.get(currentIndex++);
+        return episodes.get(index++);
     }
 }

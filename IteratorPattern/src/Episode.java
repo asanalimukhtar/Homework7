@@ -1,22 +1,19 @@
+//Episode class: stores title and duration
+
 public class Episode {
     private final String title;
-    private final int runtimeSeconds;
+    private final int runtimeSec;
 
-    public Episode(String title, int runtimeSeconds) {
+    public Episode (String title, int runtimeSec) {
         this.title = title;
-        this.runtimeSeconds = runtimeSeconds;
+        this.runtimeSec = runtimeSec;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getRuntimeSeconds() {
-        return runtimeSeconds;
-    }
-
-    @Override
-    public String toString() {
-        return title;
+    public int getRuntimeSec() {
+        return runtimeSec;
     }
 }

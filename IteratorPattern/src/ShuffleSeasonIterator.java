@@ -1,24 +1,22 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
+//Random order of episodes (with fixed seed)
 public class ShuffleSeasonIterator implements EpisodeIterator {
-    private final List<Episode> shuffledList;
-    private int currentIndex = 0;
+    private final List<Episode> shuffled;
+    private int index = 0;
 
     public ShuffleSeasonIterator(List<Episode> episodes, long seed) {
-        this.shuffledList = new ArrayList<>(episodes);
-        Collections.shuffle(this.shuffledList, new Random(seed));
+        this.shuffled = new ArrayList<>(episodes);
+        Collections.shuffle(shuffled, new Random(seed));
     }
 
     @Override
     public boolean hasNext() {
-        return currentIndex < shuffledList.size();
+        return index < shuffled.size();
     }
 
     @Override
     public Episode next() {
-        return shuffledList.get(currentIndex++);
+        return shuffled.get(index++);
     }
 }
